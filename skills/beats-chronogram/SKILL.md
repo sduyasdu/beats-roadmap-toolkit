@@ -1,5 +1,5 @@
 ---
-name: pulse-chronogram
+name: beats-chronogram
 description: >
   Generate a Yasdu-branded weekly chronogram / Gantt-style spreadsheet
   (.xlsx) for tasks in a Beat, with epics and tasks listed down the left

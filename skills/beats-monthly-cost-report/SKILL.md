@@ -1,5 +1,5 @@
 ---
-name: pulse-monthly-cost-report
+name: beats-monthly-cost-report
 description: >
   Generate a 4-sheet Excel workbook (.xlsx) that lists a Beat's tasks for a
   given month with resources assigned and hours worked, applies a monthly

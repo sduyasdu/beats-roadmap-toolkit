@@ -6,9 +6,9 @@ generates three deliverables from live Beat data:
 
 | Skill | What it produces |
 |---|---|
-| `pulse-roadmap-report` | A Yasdu-branded status report (Word or PDF) grouping tasks by status (Completed/Ongoing/Stalled/Planned) then by epic, with leads, dates, and subtasks. Asks for report language, output filetype, and which Beat to report on. |
-| `pulse-chronogram` | A Yasdu-branded weekly chronogram/Gantt-style spreadsheet (.xlsx): epics and tasks down the left, months → weeks across the top, shaded cells for active weeks. Asks for task/epic scope. |
-| `pulse-monthly-cost-report` | A Yasdu-branded 4-sheet Excel workbook: task/resource hours for a chosen month, a monthly-hours cap applied proportionally per resource, and cost computed from a monthly-cost input you fill in per resource. Asks which Beat and which month. |
+| `beats-roadmap-report` | A Yasdu-branded status report (Word or PDF) grouping tasks by status (Completed/Ongoing/Stalled/Planned) then by epic, with leads, dates, and subtasks. Asks for report language, output filetype, and which Beat to report on. |
+| `beats-chronogram` | A Yasdu-branded weekly chronogram/Gantt-style spreadsheet (.xlsx): epics and tasks down the left, months → weeks across the top, shaded cells for active weeks. Asks for task/epic scope. |
+| `beats-monthly-cost-report` | A Yasdu-branded 4-sheet Excel workbook: task/resource hours for a chosen month, a monthly-hours cap applied proportionally per resource, and cost computed from a monthly-cost input you fill in per resource. Asks which Beat and which month. |
 
 ## Who this is for
 
@@ -33,7 +33,7 @@ plugin will not be useful to you.
 
 ## Requirements
 
-- Node.js (for `pulse-roadmap-report`'s `docx` generation) and Python 3 with
+- Node.js (for `beats-roadmap-report`'s `docx` generation) and Python 3 with
   `openpyxl` (for the two spreadsheet skills) available in the environment
   Claude is running in.
 - An active account on `beats.yasdu.com` with access to the Beat(s) you

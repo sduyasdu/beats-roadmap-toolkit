@@ -1,5 +1,5 @@
 ---
-name: pulse-roadmap-report
+name: beats-roadmap-report
 description: >
   Generate a Yasdu-branded status report (Word or PDF) for a Beat project,
   grouping tasks by status (Completed / Ongoing / Stalled / Planned) and then
