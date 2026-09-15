@@ -4,7 +4,7 @@
 {
   "meta": {
     "sheetName": "Cronograma",
-    "title": "Cronograma — Product Roadmap Pulse",
+    "title": "Cronograma — Product Roadmap Beat",
     "subtitle": "Próximas {n} semanas — {start} a {end}",
     "epicColumnLabel": "Epic / Tarea",
     "legendPrefix": "Leyenda:",

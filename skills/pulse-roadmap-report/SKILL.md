@@ -1,26 +1,26 @@
 ---
 name: pulse-roadmap-report
 description: >
-  Generate a Yasdu-branded status report (Word or PDF) for a Pulse project,
+  Generate a Yasdu-branded status report (Word or PDF) for a Beat project,
   grouping tasks by status (Completed / Ongoing / Stalled / Planned) and then
   by epic, with leads, start/end dates, and bulleted subtasks per task. Use
-  this skill whenever the user asks for a roadmap status report, a Pulse
+  this skill whenever the user asks for a roadmap status report, a Beat
   report for management, a project status document, or wants to "reportar el
-  roadmap" / share progress on a Pulse — even if they don't name this skill
+  roadmap" / share progress on a Beat — even if they don't name this skill
   directly. Always trigger it instead of building an ad-hoc report by hand
-  when the request involves summarizing Pulse task data by status/epic into a
+  when the request involves summarizing Beat task data by status/epic into a
   shareable document. Before producing anything, this skill always asks the
   user three things: report language, output filetype (Word or PDF), and
-  which Pulse/project to report on — do not skip or assume these.
+  which Beat/project to report on — do not skip or assume these.
 ---
 
-# Pulse Roadmap Report
+# Beat Roadmap Report
 
 Produces a Yasdu-branded status report: tasks grouped by status, then by
 epic, each row showing the task, its lead, start/end dates, and its
 subtasks as a bulleted list — plus a closing "key risks" callout flagging
 unowned or stalled work. Visual style is fixed to the Yasdu brand (see Step
-5) — there is no style question to ask; only language, filetype, and Pulse
+5) — there is no style question to ask; only language, filetype, and Beat
 selection are elicited.
 
 ## Step 1 — Ask the three required questions
@@ -29,29 +29,29 @@ Always ask these up front, even if the user's request seems to imply an
 answer. Use `ask_user_input_v0` (or your platform's equivalent elicitation
 tool) with one call:
 
-1. **Language** — options: common languages for the user's Pulse (e.g.
+1. **Language** — options: common languages for the user's Beat (e.g.
    English, Spanish), plus an "Other" the user can type into.
 2. **Filetype** — options: "Word (.docx)", "PDF".
-3. **Pulse / project** — call `Pulse:list_pulses` first, then offer each
-   returned Pulse name as an option (skip archived ones unless the user asks
-   for one). If there's only one Pulse available, you can still confirm it
+3. **Beat / project** — call `beats:list_beats` first, then offer each
+   returned Beat name as an option (skip archived ones unless the user asks
+   for one). If there's only one Beat available, you can still confirm it
    rather than silently assuming.
 
 Wait for the user's answers before doing any data pulling or file
 generation.
 
-## Step 2 — Pull the Pulse data
+## Step 2 — Pull the Beat data
 
-1. `Pulse:get_pulse` with the chosen `pulseId` — gives you every task with
+1. `beats:get_beat` with the chosen `beatId` — gives you every task with
    epic, status, dates, and assignees (including each assignee's `isLead`
    flag — that's your Lead column, no separate lookup needed).
-2. `Pulse:search_tasks` with just the `pulseId` (no filters, `limit: 50` or
+2. `beats:search_tasks` with just the `beatId` (no filters, `limit: 50` or
    the pulse's task count if higher) — this is the call that returns each
-   task's `subtasks` array (title + status). `get_pulse` does not include
+   task's `subtasks` array (title + status). `get_beat` does not include
    subtasks, so don't skip this call. If the pulse has more tasks than one
    call's limit allows, page through by status instead (call once per
    distinct status value).
-3. Merge: for each task from `get_pulse`, attach the `subtasks` array found
+3. Merge: for each task from `get_beat`, attach the `subtasks` array found
    for the same `taskId`/title in the `search_tasks` results.
 
 ## Step 3 — Decide the status buckets and group by epic
@@ -73,7 +73,7 @@ user how to bucket them rather than guessing.
 Within each bucket, group tasks by `epic` (tasks with no epic go in a "No
 epic" group, kept as its own group — see `references/labels.md` for the
 localized label). Order epic groups by descending task count, or reuse
-whatever order the user's Pulse conventionally uses if they mention one.
+whatever order the user's Beat conventionally uses if they mention one.
 
 For **Completed** tasks, show Start Date and Finished Date (use `finishedOn`
 if present, otherwise fall back to `endDate`). For all other buckets show

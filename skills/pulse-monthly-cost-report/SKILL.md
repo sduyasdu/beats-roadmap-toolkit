@@ -1,19 +1,19 @@
 ---
 name: pulse-monthly-cost-report
 description: >
-  Generate a 4-sheet Excel workbook (.xlsx) that lists a Pulse's tasks for a
+  Generate a 4-sheet Excel workbook (.xlsx) that lists a Beat's tasks for a
   given month with resources assigned and hours worked, applies a monthly
   hour cap per resource (proportionally reducing hours on each of their
   tasks if they'd otherwise exceed it), and computes cost per task line, per
   resource, and per epic from a monthly-cost input the user fills in. Use
   this whenever the user asks for a monthly hours report, a resource cost
-  breakdown, capacity/utilization numbers for a Pulse, or wants to know what
+  breakdown, capacity/utilization numbers for a Beat, or wants to know what
   a month of roadmap work costs — even if they don't name this skill
-  directly. Always ask which Pulse and which month before pulling data or
+  directly. Always ask which Beat and which month before pulling data or
   generating anything, unless the request already specifies both.
 ---
 
-# Pulse Monthly Hours & Cost Report
+# Beat Monthly Hours & Cost Report
 
 Produces a Yasdu-branded workbook with:
 1. **Detalle `<mes>`** — one row per task-resource pair: business days
@@ -36,7 +36,7 @@ orange/navy palette) — there is no style question to ask.
 
 Ask before pulling any data unless the request already specifies these:
 
-1. **Which Pulse.** Call `Pulse:list_pulses` and offer the names.
+1. **Which Beat.** Call `beats:list_beats` and offer the names.
 2. **Which month.** Default to the current month if the user doesn't say,
    but confirm rather than assume — state the month you're using in your
    reply either way.
@@ -47,7 +47,7 @@ resources"); otherwise just use 160 and mention the default in your reply.
 
 ## Step 2 — Pull task data and filter to the month
 
-1. `Pulse:get_pulse` for the chosen Pulse — gives every task's `epic`,
+1. `beats:get_beat` for the chosen Beat — gives every task's `epic`,
    `status`, `startDate`, `endDate`, and `assignees` (with
    `allocationPercent`).
 2. Keep only tasks whose `[startDate, endDate]` overlaps the target month

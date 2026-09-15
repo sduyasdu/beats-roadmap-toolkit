@@ -2,16 +2,16 @@
 name: pulse-chronogram
 description: >
   Generate a Yasdu-branded weekly chronogram / Gantt-style spreadsheet
-  (.xlsx) for tasks in a Pulse, with epics and tasks listed down the left
+  (.xlsx) for tasks in a Beat, with epics and tasks listed down the left
   and months-then-weeks across the top, shading each week a task is active.
   Use whenever the user asks for a "chronogram", "cronograma", a Gantt
-  chart, a weekly timeline, or a visual schedule of Pulse tasks — even if
+  chart, a weekly timeline, or a visual schedule of Beat tasks — even if
   they don't name this skill directly. If the user doesn't specify which
   tasks or epics to include, always ask before pulling data or generating
   anything.
 ---
 
-# Pulse Chronogram
+# Beat Chronogram
 
 Produces a landscape spreadsheet: task rows grouped under bold epic-header
 rows on the left, week columns (grouped under merged month headers) across
@@ -26,7 +26,7 @@ stalled tasks", "all tasks", a specific task list, etc.), use that directly
 and skip to Step 2.
 
 **Otherwise, always ask before doing anything else.** Fetch the epic list
-for the relevant Pulse first (`Pulse:get_pulse`, or reuse data already in
+for the relevant Beat first (`beats:get_beat`, or reuse data already in
 context), then use `ask_user_input_v0`:
 
 - One question, options built from the actual epics present, plus an "All
@@ -47,8 +47,8 @@ you're using in your reply so the user can correct it if it's wrong.
 
 ## Step 3 — Pull and filter task data
 
-1. `Pulse:get_pulse` (or `Pulse:search_tasks` filtered by epic, if the scope
-   from Step 1 narrows to specific epics) for the chosen Pulse — gives every
+1. `beats:get_beat` (or `beats:search_tasks` filtered by epic, if the scope
+   from Step 1 narrows to specific epics) for the chosen Beat — gives every
    task's `epic`, `status`, `startDate`, `endDate`.
 2. Compute the window: Monday of the week containing "today" through the end
    of the Nth week out (see `references/input_schema.md` for exactly how the
@@ -65,7 +65,7 @@ you're using in your reply so the user can correct it if it's wrong.
 Read `references/input_schema.md` for the exact shape and
 `references/styles.md` for the fixed Yasdu style. Group filtered tasks by
 epic, preserve a sensible `epicOrder` (e.g. descending task count, or the
-order epics appeared in `get_pulse`). Write the JSON to a scratch file, then:
+order epics appeared in `get_beat`). Write the JSON to a scratch file, then:
 
 ```bash
 python3 scripts/generate_chronogram.py <input.json> <output.xlsx> <skill_dir>

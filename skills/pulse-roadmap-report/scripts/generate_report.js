@@ -1,5 +1,5 @@
 /**
- * Generate a Yasdu-branded Pulse roadmap status report (.docx).
+ * Generate a Yasdu-branded Beat roadmap status report (.docx).
  *
  * Usage: node generate_report.js <input.json> <output.docx> <logo.png>
  *

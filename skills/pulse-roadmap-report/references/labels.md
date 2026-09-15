@@ -1,7 +1,7 @@
 # Label reference
 
 These are the recurring strings in the report. English and Spanish are given
-as ready-made examples since Pulse rosters are commonly in one of the two.
+as ready-made examples since Beat rosters are commonly in one of the two.
 For any other language the user asks for, translate all of these yourself —
 keep task titles, epic names, and people's names unchanged (proper nouns),
 translate everything else (headings, column labels, status words, intro
@@ -11,7 +11,7 @@ sentences, the key-risks note).
 |---|---|---|
 | Report title | Product Roadmap | Roadmap de Producto |
 | Subtitle | Status Report for Management — {date} | Informe de Estado para Dirección — {date} |
-| Intro (template) | Snapshot of the {pulseName} Pulse: {n} tasks across {m} epics. Grouped below by status, then by epic, with key dates and subtasks. | Resumen del Pulse {pulseName}: {n} tareas en {m} epics. Agrupadas por estado, luego por epic, con fechas clave y subtareas. |
+| Intro (template) | Snapshot of the {pulseName} beats: {n} tasks across {m} epics. Grouped below by status, then by epic, with key dates and subtasks. | Resumen del Beat {pulseName}: {n} tareas en {m} epics. Agrupadas por estado, luego por epic, con fechas clave y subtareas. |
 | Completed (heading) | ✔ Completed | ✔ Completadas |
 | Ongoing (heading) | ▶ Ongoing | ▶ En curso |
 | Stalled (heading) | ⚠ Stalled — needs attention | ⚠ Detenidas — requieren atención |

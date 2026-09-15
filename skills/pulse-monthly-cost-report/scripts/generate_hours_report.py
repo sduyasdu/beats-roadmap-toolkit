@@ -1,6 +1,6 @@
 """
 Generate a 4-sheet monthly Hours & Cost report (.xlsx), always in the Yasdu
-brand style, from a Pulse task list:
+brand style, from a Beat task list:
   1. Detalle <mes> — one row per task-resource pair, with business-day overlap
      against the target month, a 160-hs (or custom) monthly cap applied
      proportionally per resource, hourly rate lookup, and line cost.
@@ -173,7 +173,7 @@ note = ws.cell(
            f"({int(CAP_HOURS)} / total sin tope) reduce proporcionalmente las horas de cada una de sus tareas hasta que el total "
            f"con tope sea {int(CAP_HOURS)}. Costo: Tarifa Horaria = Costo Mensual ingresado en la hoja 'Costo por Recurso' / "
            f"{int(CAP_HOURS)} hs. Costo de cada línea = Horas (con tope) × Tarifa Horaria. "
-           f"Tareas sin recurso asignado en Pulse muestran 0 horas y 0 costo.")
+           f"Tareas sin recurso asignado en Beat muestran 0 horas y 0 costo.")
 )
 ws.merge_cells(start_row=note_row, start_column=1, end_row=note_row, end_column=15)
 note.font = Font(name=FONT_NAME, size=9, italic=True, color=GREY)
@@ -253,7 +253,7 @@ for name in resource_names:
     cost_cell.fill = PatternFill("solid", fgColor=YELLOW)
     cost_cell.border = border_all
     cost_cell.alignment = Alignment(horizontal="center", vertical="center")
-    cost_cell.comment = Comment("Ingresar el costo mensual (USD) de este recurso.", "Pulse Roadmap Toolkit")
+    cost_cell.comment = Comment("Ingresar el costo mensual (USD) de este recurso.", "Beat Roadmap Toolkit")
 
     rate_cell = ws_cost.cell(row=rc, column=3, value=f'=IF(B{rc}="",0,B{rc}/{CAP_HOURS})')
     rate_cell.number_format = "$#,##0.00"

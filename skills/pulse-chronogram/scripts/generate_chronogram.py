@@ -1,5 +1,5 @@
 """
-Generate a weekly chronogram (Gantt-style) spreadsheet from a Pulse task
+Generate a weekly chronogram (Gantt-style) spreadsheet from a Beat task
 list, always rendered in the Yasdu brand style.
 
 Usage: python3 generate_chronogram.py <input.json> <output.xlsx> <skill_dir>

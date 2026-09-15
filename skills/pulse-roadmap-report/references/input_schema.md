@@ -60,6 +60,6 @@ by the script.
   every row's text in that section.
 - Sections appear in the document in the array order given — order them
   Completed → Ongoing → Stalled → Planned (or the local-language equivalent
-  status buckets actually present in the Pulse).
+  status buckets actually present in the Beat).
 - `keyRisks` is optional — omit the top-level key entirely to skip the callout
   box.

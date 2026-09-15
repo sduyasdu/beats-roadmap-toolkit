@@ -1,12 +1,14 @@
 {
   "name": "yasdu-marketplace",
-  "owner": { "name": "Yasdu" },
+  "owner": {
+    "name": "Yasdu"
+  },
   "description": "Marketplace for Yasdu applications",
   "plugins": [
     {
       "name": "pulse-roadmap-toolkit",
       "source": "./",
-      "description": "Pulse epic/task reports, chronograms, and cost workbooks."
+      "description": "Beats epic/task reports, chronograms, and cost workbooks."
     }
   ]
 }
