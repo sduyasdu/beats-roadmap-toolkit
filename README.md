@@ -47,8 +47,8 @@ plugin will not be useful to you.
 From a directory containing this plugin folder:
 
 ```bash
-claude plugin validate ./pulse-roadmap-toolkit
-claude --plugin-dir ./pulse-roadmap-toolkit
+claude plugin validate ./beats-roadmap-toolkit
+claude --plugin-dir ./beats-roadmap-toolkit
 ```
 
 Or install into an existing Claude Code session pointed at a local path
@@ -61,7 +61,7 @@ a `.claude-plugin/marketplace.json` catalog file. If this plugin's own
 `.claude-plugin` folder is the repo root, `marketplace.json`'s `source`
 should be `"./"`; if the plugin lives inside a `plugins/` subfolder (the
 layout used when a repo hosts more than one plugin), `source` should point
-at that subfolder, e.g. `"./plugins/pulse-roadmap-toolkit"`. This repo needs
+at that subfolder, e.g. `"./plugins/beats-roadmap-toolkit"`. This repo needs
 its own `marketplace.json` at the repo root either way — it isn't included
 automatically.
 
@@ -73,14 +73,14 @@ automatically.
 4. Click **Browse plugins**, then **Add marketplace**.
 5. Enter the repository URL — either form works:
    ```
-   https://github.com/sduyasdu/pulse-roadmap-toolkit
+   https://github.com/sduyasdu/beats-roadmap-toolkit
    ```
    or the shorthand:
    ```
-   sduyasdu/pulse-roadmap-toolkit
+   sduyasdu/beats-roadmap-toolkit
    ```
 6. Cowork reads `.claude-plugin/marketplace.json` at the repo root and lists
-   the plugin(s) it finds — **pulse-roadmap-toolkit** should appear.
+   the plugin(s) it finds — **beats-roadmap-toolkit** should appear.
 
 If you get **"Marketplace sync failed. Check the repository URL and try
 again,"** check these two known gotchas before anything else — both have
@@ -100,7 +100,7 @@ automatically.
 
 ### Install the plugin
 
-1. Click on **pulse-roadmap-toolkit** in the marketplace listing.
+1. Click on **beats-roadmap-toolkit** in the marketplace listing.
 2. Click **Install**.
 3. Since this plugin bundles the `pulse` MCP connector, you'll be prompted
    to sign in to `beats.yasdu.com` right after install — complete that

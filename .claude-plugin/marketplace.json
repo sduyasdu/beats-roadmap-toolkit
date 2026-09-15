@@ -6,7 +6,7 @@
   "description": "Marketplace for Yasdu applications",
   "plugins": [
     {
-      "name": "pulse-roadmap-toolkit",
+      "name": "beats-roadmap-toolkit",
       "source": "./",
       "description": "Beats epic/task reports, chronograms, and cost workbooks."
     }

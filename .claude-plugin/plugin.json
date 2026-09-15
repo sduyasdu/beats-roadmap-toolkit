@@ -1,11 +1,11 @@
 {
-  "name": "pulse-roadmap-toolkit",
+  "name": "beats-roadmap-toolkit",
   "description": "Connects to Beats (beats.yasdu.com) and generates three deliverables from live Beat data: a branded epic/task status report (Word or PDF), a weekly chronogram/Gantt spreadsheet, and a monthly resource hours & cost workbook.",
   "version": "1.0.0",
   "author": {
-    "name": "Pulse Roadmap Toolkit contributors"
+    "name": "Beats Roadmap Toolkit contributors"
   },
-  "homepage": "https://github.com/sduyasdu/pulse-roadmap-toolkit",
+  "homepage": "https://github.com/sduyasdu/beats-roadmap-toolkit",
   "license": "MIT",
   "keywords": [
     "beats",
