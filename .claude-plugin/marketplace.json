@@ -10,5 +10,8 @@
       "source": "./",
       "description": "Beats epic/task reports, chronograms, and cost workbooks."
     }
-  ]
+  ],
+  "renames": {
+    "pulse-roadmap-toolkit": "beats-roadmap-toolkit"
+  }
 }
